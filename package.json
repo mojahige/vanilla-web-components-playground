@@ -2,21 +2,26 @@
   "name": "vanilla-web-components-playground",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "format": "biome format --write . & prettier --cache --write '**/*.{css,json}'",
+    "lint:javascript": "biome lint './components'",
+    "lint:javascript:fix": "biome lint --apply './components'",
+    "storybook": "storybook dev -p 6006"
   },
   "author": "mojahige",
   "license": "ISC",
   "devDependencies": {
+    "@biomejs/biome": "^1.4.1",
     "@storybook/addon-essentials": "^7.6.6",
     "@storybook/addon-links": "^7.6.6",
     "@storybook/blocks": "^7.6.6",
     "@storybook/web-components": "^7.6.6",
     "@storybook/web-components-vite": "^7.6.6",
     "lit": "^3.1.0",
+    "prettier": "^3.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "storybook": "^7.6.6"
+    "storybook": "^7.6.6",
+    "typescript": "^5.3.3"
   }
 }
