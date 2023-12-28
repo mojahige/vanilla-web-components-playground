@@ -1,3 +1,6 @@
+import "./modern-normalize.css";
+import "./base.css";
+
 /** @type { import('@storybook/web-components').Preview } */
 const preview = {
   parameters: {
