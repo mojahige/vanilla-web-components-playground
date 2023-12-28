@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/web-components";
 import { html, nothing } from "lit";
 import Placeholder from ".";
 
-customElements.define("my-placeholder", Placeholder);
+customElements.define("x-placeholder", Placeholder);
 
 const meta: Meta = {
   title: "Autonomous custom element/Placeholder",
@@ -20,10 +20,10 @@ const meta: Meta = {
     },
   },
   render: ({ "data-width": width, "data-height": height }) =>
-    html`<my-placeholder
+    html`<x-placeholder
       data-width=${width ?? nothing}
       data-height=${height ?? nothing}
-    ></my-placeholder>`,
+    ></x-placeholder>`,
 };
 
 export default meta;
