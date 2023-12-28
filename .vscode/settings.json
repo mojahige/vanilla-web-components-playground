@@ -1,8 +1,8 @@
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": false,
-    "quickfix.biome": true,
-    "source.organizeImports.biome": true
+    "source.fixAll.eslint": "never",
+    "quickfix.biome": "explicit",
+    "source.organizeImports.biome": "explicit"
   },
   "[javascript]": {
     "editor.defaultFormatter": "biomejs.biome"
