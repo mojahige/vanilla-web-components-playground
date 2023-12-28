@@ -1,5 +1,9 @@
 // @ts-check
 
+const formatter = new Intl.NumberFormat("en", {
+  maximumFractionDigits: 1,
+});
+
 export default class Placeholder extends HTMLElement {
   /**
    * @type {ShadowRoot}
@@ -61,8 +65,8 @@ export default class Placeholder extends HTMLElement {
     const { width, height } = this.dataset;
 
     this.#fixSize = {
-      width: width ? this.#parseInt(width) : undefined,
-      height: height ? this.#parseInt(height) : undefined,
+      width: width ? this.#parse(width) : undefined,
+      height: height ? this.#parse(height) : undefined,
     };
 
     const { width: fixWidth, height: fixHeight } = this.#fixSize;
@@ -91,18 +95,20 @@ export default class Placeholder extends HTMLElement {
     const { width, height } = this.getBoundingClientRect();
     const { width: fixWidth, height: fixHeight } = this.#fixSize;
 
-    this.#width = fixWidth ?? width;
-    this.#height = fixHeight ?? height;
+    this.#width = fixWidth ?? Number(formatter.format(width));
+    this.#height = fixHeight ?? Number(formatter.format(height));
   }
 
   /**
    * @param {string} value
    * @returns {number|undefined}
    */
-  #parseInt(value) {
-    const parsedValue = parseInt(value);
+  #parse(value) {
+    const parsedValue = Number(value);
 
-    return Number.isNaN(parsedValue) ? undefined : parsedValue;
+    return Number.isNaN(parsedValue)
+      ? undefined
+      : Number(formatter.format(parsedValue));
   }
 
   #render() {
