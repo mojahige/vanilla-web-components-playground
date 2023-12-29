@@ -1,8 +1,8 @@
 /// <reference types="vitest" />
 
-import { defineConfig } from "vite";
+import { defineConfig } from "vitest/config";
 
-// https://vitejs.dev/config/
+// https://vitest.dev/config/
 export default defineConfig({
   test: {
     environment: "happy-dom",
