@@ -1,0 +1,34 @@
+@scope ([is="x-tab"]) {
+  [role="tablist"] {
+    display: flex;
+  }
+
+  [role="tab"] {
+    position: relative;
+    padding-inline: 1rem;
+    padding-block: 0.8rem;
+    border: 2px solid transparent;
+    background-color: transparent;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+
+    &[aria-selected="true"] {
+      border-color: gray;
+    }
+
+    &:focus-within {
+      outline-offset: 4px;
+    }
+  }
+
+  [role="tabpanel"] {
+    &:focus-within {
+      outline-offset: 4px;
+    }
+
+    &:not(.is-shown) {
+      display: none;
+    }
+  }
+}
