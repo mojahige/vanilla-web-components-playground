@@ -1,5 +1,5 @@
-import "./modern-normalize.css";
 import "./base.css";
+import "./modern-normalize.css";
 
 /** @type { import('@storybook/web-components').Preview } */
 const preview = {
