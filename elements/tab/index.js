@@ -69,38 +69,17 @@ export default class Tab extends HTMLDivElement {
     }
 
     const activeTabIndex = this.tabs.indexOf(button);
-    let updateIndex = 0;
-    let flag = false;
+    const keyActions = {
+      ArrowLeft: () => Math.max(activeTabIndex - 1, 0),
+      ArrowRight: () => Math.min(activeTabIndex + 1, this.tabs.length - 1),
+      Home: () => 0,
+      End: () => this.tabs.length - 1,
+    };
 
-    switch (key) {
-      case "ArrowLeft":
-        updateIndex = Math.max(activeTabIndex - 1, 0);
-        flag = true;
-        break;
-
-      case "ArrowRight":
-        updateIndex = Math.min(activeTabIndex + 1, this.tabs.length - 1);
-        flag = true;
-        break;
-
-      case "Home":
-        this.update(0);
-        flag = true;
-        break;
-
-      case "End":
-        updateIndex = this.tabs.length - 1;
-        flag = true;
-        break;
-
-      default:
-        break;
-    }
-
-    if (flag) {
+    if (key in keyActions) {
       event.stopPropagation();
       event.preventDefault();
-      this.update(updateIndex, true);
+      this.update(keyActions[key](), true);
     }
   }
 
