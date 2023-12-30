@@ -64,7 +64,7 @@ export default class Tab extends HTMLDivElement {
 
     const button = target.closest('[role="tab"]');
 
-    if (!button || !(button instanceof HTMLElement)) {
+    if (!(button instanceof HTMLElement)) {
       return;
     }
 
@@ -96,7 +96,6 @@ export default class Tab extends HTMLDivElement {
     const button = target.closest('[role="tab"]');
 
     if (
-      !button ||
       !(button instanceof HTMLElement) ||
       button.getAttribute("aria-disabled") === "true"
     ) {
