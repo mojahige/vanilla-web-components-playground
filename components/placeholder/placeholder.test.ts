@@ -1,4 +1,3 @@
-import { fixture, html } from "@open-wc/testing";
 import { expect, test } from "vitest";
 import Placeholder from ".";
 
@@ -16,11 +15,12 @@ test.each([
 ])(
   "For data-width=$value, the value of the custom property is $expected",
   async ({ value, expected }) => {
-    const el = await fixture<Placeholder>(
-      html`<x-placeholder data-width="${value}"></x-placeholder>`,
-    );
+    const xPlaceholder = document.createElement("x-placeholder");
 
-    expect(el.style.getPropertyValue("--width")).toBe(expected);
+    xPlaceholder.setAttribute("data-width", value);
+    document.body.appendChild(xPlaceholder);
+
+    expect(xPlaceholder.style.getPropertyValue("--width")).toBe(expected);
   },
 );
 
@@ -36,10 +36,11 @@ test.each([
 ])(
   "For data-height=$value, the value of the custom property is $expected",
   async ({ value, expected }) => {
-    const el = await fixture<Placeholder>(
-      html`<x-placeholder data-height="${value}"></x-placeholder>`,
-    );
+    const xPlaceholder = document.createElement("x-placeholder");
 
-    expect(el.style.getPropertyValue("--height")).toBe(expected);
+    xPlaceholder.setAttribute("data-height", value);
+    document.body.appendChild(xPlaceholder);
+
+    expect(xPlaceholder.style.getPropertyValue("--height")).toBe(expected);
   },
 );
