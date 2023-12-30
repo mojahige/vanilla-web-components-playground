@@ -92,11 +92,14 @@ export default class Placeholder extends HTMLElement {
   }
 
   #setSize() {
-    const { width, height } = this.getBoundingClientRect();
+    const { width: rectWidth, height: rectHeight } =
+      this.getBoundingClientRect();
     const { width: fixWidth, height: fixHeight } = this.#fixSize;
+    const width = this.#parse(rectWidth.toString()) ?? 0;
+    const height = this.#parse(rectHeight.toString()) ?? 0;
 
-    this.#width = fixWidth ?? Number(formatter.format(width));
-    this.#height = fixHeight ?? Number(formatter.format(height));
+    this.#width = fixWidth ?? width;
+    this.#height = fixHeight ?? height;
   }
 
   /**
@@ -106,13 +109,13 @@ export default class Placeholder extends HTMLElement {
   #parse(value) {
     const parsedValue = Number(value);
 
-    return Number.isNaN(parsedValue)
-      ? undefined
-      : Number(formatter.format(parsedValue));
+    return Number.isNaN(parsedValue) ? undefined : parsedValue;
   }
 
   #render() {
-    this.#infoTarget.textContent = `${this.#width} x ${this.#height}`;
+    this.#infoTarget.textContent = `
+      ${formatter.format(this.#width)} x ${formatter.format(this.#height)}
+    `;
   }
 
   #onResize() {
