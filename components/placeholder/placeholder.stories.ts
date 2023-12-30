@@ -20,10 +20,11 @@ const meta: Meta = {
     },
   },
   render: ({ "data-width": width, "data-height": height }) =>
-    html`<x-placeholder
-      data-width=${width ?? nothing}
-      data-height=${height ?? nothing}
-    ></x-placeholder>`,
+    html`
+      <x-placeholder
+        data-width=${width ?? nothing}
+        data-height=${height ?? nothing}
+      ></x-placeholder>`,
 };
 
 export default meta;

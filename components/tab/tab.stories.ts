@@ -16,145 +16,142 @@ type Story = StoryObj;
 
 export const Example: Story = {
   render: () => html`
-  <div is="x-tab">
-    <h1 id="tab">Tab</h1>
+    <div is="x-tab">
+      <h1 id="tab">Tab</h1>
 
-    <div role="tablist" aria-labelledby="tab">
-      <button
-        id="tab-1"
-        type="button"
-        role="tab"
+      <div role="tablist" aria-labelledby="tab">
+        <button
+          id="tab-1"
+          type="button"
+          role="tab"
+          tabindex="0"
+          aria-selected="true"
+          aria-controls="tabpanel-1"
+        >
+          Tab 1
+        </button>
+
+        <button
+          id="tab-2"
+          type="button"
+          role="tab"
+          tabindex="-1"
+          aria-selected="false"
+          aria-controls="tabpanel-2"
+        >
+          Tab 2
+        </button>
+
+        <button
+          id="tab-3"
+          type="button"
+          role="tab"
+          tabindex="-1"
+          aria-selected="false"
+          aria-controls="tabpanel-3"
+        >
+          Tab 3
+        </button>
+      </div>
+
+      <div
+        id="tabpanel-1"
+        class="is-shown"
+        role="tabpanel"
         tabindex="0"
-        aria-selected="true"
-        aria-controls="tabpanel-1"
+        aria-labelledby="tab-1"
       >
-        Tab 1
-      </button>
+        <p>Tab Panel 1</p>
+      </div>
 
-      <button
-        id="tab-2"
-        type="button"
-        role="tab"
-        tabindex="-1"
-        aria-selected="false"
-        aria-controls="tabpanel-2"
+      <div
+        id="tabpanel-2" 
+        role="tabpanel"
+        tabindex="0"
+        aria-labelledby="tab-2"
       >
-        Tab 2
-      </button>
+        <p>Tab Panel 2</p>
+      </div>
 
-      <button
-        id="tab-3"
-        type="button"
-        role="tab"
-        tabindex="-1"
-        aria-selected="false"
-        aria-controls="tabpanel-3"
+      <div
+        id="tabpanel-3"
+        role="tabpanel"
+        tabindex="0" 
+        aria-labelledby="tab-3"
       >
-        Tab 3
-      </button>
-    </div>
-
-    <div
-      id="tabpanel-1"
-      class="is-shown"
-      role="tabpanel"
-      tabindex="0"
-      aria-labelledby="tab-1"
-    >
-      <p>Tab Panel 1</p>
-    </div>
-
-    <div
-      id="tabpanel-2" 
-      role="tabpanel"
-      tabindex="0"
-      aria-labelledby="tab-2"
-    >
-      <p>Tab Panel 2</p>
-    </div>
-
-    <div
-      id="tabpanel-3"
-      role="tabpanel"
-      tabindex="0" 
-      aria-labelledby="tab-3"
-    >
-      <p>Tab Panel 3</p>
-    </div>
-  </div>
-  `,
+        <p>Tab Panel 3</p>
+      </div>
+    </div>`,
 };
 
 export const AutoInitialSelect: Story = {
   render: () => html`
-  <div is="x-tab">
-    <h1 id="tab">Tab</h1>
+    <div is="x-tab">
+      <h1 id="tab">Tab</h1>
 
-    <div role="tablist" aria-labelledby="tab">
-      <button id="tab-1" type="button" role="tab" aria-controls="tabpanel-1">
-        Tab 1
-      </button>
+      <div role="tablist" aria-labelledby="tab">
+        <button id="tab-1" type="button" role="tab" aria-controls="tabpanel-1">
+          Tab 1
+        </button>
 
-      <button id="tab-2" type="button" role="tab" aria-controls="tabpanel-2">
-        Tab 2
-      </button>
+        <button id="tab-2" type="button" role="tab" aria-controls="tabpanel-2">
+          Tab 2
+        </button>
 
-      <button id="tab-3" type="button" role="tab" aria-controls="tabpanel-3">
-        Tab 3
-      </button>
-    </div>
+        <button id="tab-3" type="button" role="tab" aria-controls="tabpanel-3">
+          Tab 3
+        </button>
+      </div>
 
-    <div id="tabpanel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1">
-      <p>Tab Panel 1</p>
-    </div>
+      <div id="tabpanel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1">
+        <p>Tab Panel 1</p>
+      </div>
 
-    <div id="tabpanel-2" role="tabpanel" tabindex="0" aria-labelledby="tab-2">
-      <p>Tab Panel 2</p>
-    </div>
+      <div id="tabpanel-2" role="tabpanel" tabindex="0" aria-labelledby="tab-2">
+        <p>Tab Panel 2</p>
+      </div>
 
-    <div id="tabpanel-3" role="tabpanel" tabindex="0" aria-labelledby="tab-3">
-      <p>Tab Panel 3</p>
-    </div>
-  </div>
-  `,
+      <div id="tabpanel-3" role="tabpanel" tabindex="0" aria-labelledby="tab-3">
+        <p>Tab Panel 3</p>
+      </div>
+    </div>`,
 };
 
 export const UserInitialSelect: Story = {
   render: () => html`
-  <div is="x-tab">
-    <h1 id="tab">Tab</h1>
+    <div is="x-tab">
+      <h1 id="tab">Tab</h1>
 
-    <div role="tablist" aria-labelledby="tab">
-      <button id="tab-1" type="button" role="tab" aria-controls="tabpanel-1">
-        Tab 1
-      </button>
+      <div role="tablist" aria-labelledby="tab">
+        <button id="tab-1" type="button" role="tab" aria-controls="tabpanel-1">
+          Tab 1
+        </button>
 
-      <button
-        id="tab-2"
-        type="button"
-        role="tab"
-        aria-selected="true"
-        aria-controls="tabpanel-2"
-      >
-        Tab 2
-      </button>
+        <button
+          id="tab-2"
+          type="button"
+          role="tab"
+          aria-selected="true"
+          aria-controls="tabpanel-2"
+        >
+          Tab 2
+        </button>
 
-      <button id="tab-3" type="button" role="tab" aria-controls="tabpanel-3">
-        Tab 3
-      </button>
-    </div>
+        <button id="tab-3" type="button" role="tab" aria-controls="tabpanel-3">
+          Tab 3
+        </button>
+      </div>
 
-    <div id="tabpanel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1">
-      <p>Tab Panel 1</p>
-    </div>
+      <div id="tabpanel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1">
+        <p>Tab Panel 1</p>
+      </div>
 
-    <div id="tabpanel-2" role="tabpanel" tabindex="0" aria-labelledby="tab-2">
-      <p>Tab Panel 2</p>
-    </div>
+      <div id="tabpanel-2" role="tabpanel" tabindex="0" aria-labelledby="tab-2">
+        <p>Tab Panel 2</p>
+      </div>
 
-    <div id="tabpanel-3" role="tabpanel" tabindex="0" aria-labelledby="tab-3">
-      <p>Tab Panel 3</p>
-    </div>
-  </div>
-  `,
+      <div id="tabpanel-3" role="tabpanel" tabindex="0" aria-labelledby="tab-3">
+        <p>Tab Panel 3</p>
+      </div>
+    </div>`,
 };
