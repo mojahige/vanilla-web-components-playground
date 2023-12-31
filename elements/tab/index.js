@@ -97,7 +97,7 @@ export default class Tab extends HTMLDivElement {
 
     if (
       !(button instanceof HTMLElement) ||
-      button.getAttribute("aria-disabled") === "true"
+      button.getAttribute("aria-selected") === "true"
     ) {
       return;
     }
