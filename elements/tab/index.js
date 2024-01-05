@@ -69,6 +69,8 @@ export default class Tab extends HTMLDivElement {
     }
 
     const activeTabIndex = this.tabs.indexOf(button);
+
+    /** @type {{ [key: string]: () => number }} */
     const keyActions = {
       ArrowLeft: () => Math.max(activeTabIndex - 1, 0),
       ArrowRight: () => Math.min(activeTabIndex + 1, this.tabs.length - 1),
@@ -76,10 +78,12 @@ export default class Tab extends HTMLDivElement {
       End: () => this.tabs.length - 1,
     };
 
-    if (key in keyActions) {
+    const updateIndex = keyActions[key]?.();
+
+    if (updateIndex !== undefined) {
       event.stopPropagation();
       event.preventDefault();
-      this.update(keyActions[key](), true);
+      this.update(updateIndex, true);
     }
   }
 
