@@ -1,0 +1,22 @@
+@scope ([is="x-toggle-button"]) {
+  :scope {
+    padding: 0.5rem;
+    border: 2px solid transparent;
+    border-radius: 0.2rem;
+
+    &:focus-visible {
+      outline-offset: 4px;
+    }
+
+    &[aria-pressed="true"] {
+      background-color: darkslateblue;
+      border-color: darkslateblue;
+      color: white;
+    }
+
+    &[aria-pressed="false"] {
+      background-color: white;
+      border-color: gray;
+    }
+  }
+}
