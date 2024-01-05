@@ -14,17 +14,17 @@
   "license": "ISC",
   "devDependencies": {
     "@biomejs/biome": "^1.4.1",
-    "@storybook/addon-essentials": "^7.6.6",
-    "@storybook/addon-links": "^7.6.6",
-    "@storybook/blocks": "^7.6.6",
-    "@storybook/web-components": "^7.6.6",
-    "@storybook/web-components-vite": "^7.6.6",
+    "@storybook/addon-essentials": "^7.6.7",
+    "@storybook/addon-links": "^7.6.7",
+    "@storybook/blocks": "^7.6.7",
+    "@storybook/web-components": "^7.6.7",
+    "@storybook/web-components-vite": "^7.6.7",
     "happy-dom": "^12.10.3",
     "lit": "^3.1.0",
     "prettier": "^3.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "storybook": "^7.6.6",
+    "storybook": "^7.6.7",
     "typescript": "^5.3.3",
     "vitest": "^1.1.0"
   }
