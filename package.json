@@ -5,8 +5,8 @@
   "scripts": {
     "build-storybook": "storybook build",
     "format": "biome format --write . & prettier --cache --write '**/*.{css,json}'",
-    "lint:javascript": "biome lint './components'",
-    "lint:javascript:fix": "biome lint --apply './components'",
+    "lint:javascript": "biome lint './elements'",
+    "lint:javascript:fix": "biome lint --apply './elements'",
     "storybook": "storybook dev -p 6006",
     "test": "vitest run"
   },
