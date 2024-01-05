@@ -8,6 +8,9 @@ devDependencies:
   '@biomejs/biome':
     specifier: ^1.4.1
     version: 1.4.1
+  '@storybook/addon-a11y':
+    specifier: ^7.6.7
+    version: 7.6.7
   '@storybook/addon-essentials':
     specifier: ^7.6.7
     version: 7.6.7(react-dom@18.2.0)(react@18.2.0)
@@ -2637,6 +2640,13 @@ packages:
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
     dev: true
 
+  /@storybook/addon-a11y@7.6.7:
+    resolution: {integrity: sha512-poT2oXIYDwLnhqn6g9ACTQ+7gi8QDHVlib4TQANdcozC/qYg+Bs6Pd99wT6rT4lrC/npVNTSKKwLw+3oXqlCxg==}
+    dependencies:
+      '@storybook/addon-highlight': 7.6.7
+      axe-core: 4.8.3
+    dev: true
+
   /@storybook/addon-actions@7.6.7:
     resolution: {integrity: sha512-+6EZvhIeKEqG/RNsU3R5DxOrd60BL5GEvmzE2w60s2eKaNNxtyilDjiO1g4z2s2zDNyr7JL/Ft03pJ0Jgo0lew==}
     dependencies:
@@ -3733,6 +3743,11 @@ packages:
   /available-typed-arrays@1.0.5:
     resolution: {integrity: sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==}
     engines: {node: '>= 0.4'}
+    dev: true
+
+  /axe-core@4.8.3:
+    resolution: {integrity: sha512-d5ZQHPSPkF9Tw+yfyDcRoUOc4g/8UloJJe5J8m4L5+c7AtDdjDLRxew/knnI4CxvtdxEUVgWz4x3OIQUIFiMfw==}
+    engines: {node: '>=4'}
     dev: true
 
   /babel-core@7.0.0-bridge.0(@babel/core@7.23.6):
