@@ -8,7 +8,8 @@
     "lint:javascript": "biome lint './elements'",
     "lint:javascript:fix": "biome lint --apply './elements'",
     "storybook": "storybook dev -p 6006",
-    "test": "vitest run"
+    "test": "vitest run",
+    "type-check": "tsc --noEmit"
   },
   "author": "mojahige",
   "license": "ISC",
