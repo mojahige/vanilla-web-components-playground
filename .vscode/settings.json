@@ -1,5 +1,9 @@
 {
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
   "editor.codeActionsOnSave": {
+    "source.fixAll.styelelint": "explicit",
     "source.fixAll.eslint": "never",
     "quickfix.biome": "explicit",
     "source.organizeImports.biome": "explicit"
