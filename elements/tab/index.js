@@ -119,7 +119,7 @@ export default class Tab extends HTMLDivElement {
       const tabPanel = this.tabPanels[i];
       const isActive = i === index;
 
-      tab?.setAttribute("aria-selected", isActive ? "true" : "false");
+      tab?.setAttribute("aria-selected", isActive.toString());
       tab?.setAttribute("tabindex", isActive ? "0" : "-1");
       tabPanel?.classList.toggle("is-shown", isActive);
     }
